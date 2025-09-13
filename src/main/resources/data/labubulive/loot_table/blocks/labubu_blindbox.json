@@ -1,0 +1,100 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_ingot",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {"min": 4,"max": 32}
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_ingot",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {"min": 4,"max": 32}
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {"min": 2,"max": 8}
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "labubulive:labubu_blindbox",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {"min": 1,"max": 3}
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "labubulive:labubu_luck",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "labubulive:labubu_fall",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "labubulive:labubu_skater",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "labubulive:labubu_flip_with_me",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "labubulive:labubu_pumpkin",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "labubulive:labubu_checkmate",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "labubulive:labubu_miner",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "labubulive:labubu_angel",
+          "weight": 1
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}
