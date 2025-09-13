@@ -4,7 +4,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
-import net.neoforged.neoforge.common.ModConfigSpec;                    // <- renamed from ForgeConfigSpec
+import net.neoforged.neoforge.common.ModConfigSpec;   // NeoForge config spec
 import net.neoforged.fml.event.config.ModConfigEvent;
 
 import net.neoforged.bus.api.SubscribeEvent;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@EventBusSubscriber(modid = LabubuLive.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = LabubuLive.MOD_ID) // <-- removed 'bus = ...'
 public class Config {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
@@ -55,7 +55,9 @@ public class Config {
         magicNumberIntroduction = MAGIC_NUMBER_INTRODUCTION.get();
 
         items = ITEM_STRINGS.get().stream()
-                .map(s -> BuiltInRegistries.ITEM.get(ResourceLocation.tryParse(s)))
+                .map(s -> ResourceLocation.tryParse(s))
+                .filter(id -> id != null)
+                .map(BuiltInRegistries.ITEM::get)
                 .collect(Collectors.toSet());
     }
 }
