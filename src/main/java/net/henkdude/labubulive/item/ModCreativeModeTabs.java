@@ -6,34 +6,34 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModCreativeModeTabs {
-    public static final DeferredRegister<CreativeModeTab>CREATIVE_MODE_TABS=
+
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, LabubuLive.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab>LABUBU=CREATIVE_MODE_TABS.register("labubu_tab",
-            ()-> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.LABUBU_LUCK.get()))
-                    .title(Component.translatable("creativetab.labubulive.labubu_tab"))
-                    .displayItems((pParameters, pOutput) -> {
-                        pOutput.accept(ModBlocks.LABUBU_BLINDBOX.get());
-                        pOutput.accept(ModItems.LABUBU_LUCK.get());
-                        pOutput.accept(ModItems.LABUBU_CHECKMATE.get());
-                        pOutput.accept(ModItems.LABUBU_FLIP_WITH_ME.get());
-                        pOutput.accept(ModItems.LABUBU_PUMPKIN.get());
-                        pOutput.accept(ModItems.LABUBU_FALL.get());
-                        pOutput.accept(ModItems.LABUBU_SKATER.get());
-                        pOutput.accept(ModItems.LABUBU_ANGEL.get());
-                        pOutput.accept(ModItems.LABUBU_MINER.get());
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> LABUBU =
+            CREATIVE_MODE_TABS.register("labubu_tab",
+                    () -> CreativeModeTab.builder()
+                            .icon(() -> new ItemStack(ModItems.LABUBU_LUCK.get()))
+                            .title(Component.translatable("creativetab.labubulive.labubu_tab"))
+                            .displayItems((parameters, output) -> {
+                                output.accept(ModBlocks.LABUBU_BLINDBOX.get());
+                                output.accept(ModItems.LABUBU_LUCK.get());
+                                output.accept(ModItems.LABUBU_CHECKMATE.get());
+                                output.accept(ModItems.LABUBU_FLIP_WITH_ME.get());
+                                output.accept(ModItems.LABUBU_PUMPKIN.get());
+                                output.accept(ModItems.LABUBU_FALL.get());
+                                output.accept(ModItems.LABUBU_SKATER.get());
+                                output.accept(ModItems.LABUBU_ANGEL.get());
+                                output.accept(ModItems.LABUBU_MINER.get());
+                            })
+                            .build());
 
-
-
-                    }).build());
-
-
-    public static void register(IEventBus eventBus){
+    public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
 }
